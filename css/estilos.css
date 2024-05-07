@@ -63,7 +63,6 @@ img {
   section.photo-grid-container {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
-    background-color: beige;
   }
   section.photo-grid-container .logo {
     grid-column: 1/5;
