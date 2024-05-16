@@ -5,21 +5,70 @@
 
 /*--Inicio Header--*/
 /*index*/
-.menu-container {
+header {
+  background-color: black;
   position: sticky;
   top: 0px;
   font-family: "Sedan", serif;
   font-style: italic;
+  z-index: 1;
+}
+header .navbar-brand {
+  color: white !important;
+}
+header .dropdown-menu {
+  background-color: black;
+}
+header .dropdown-item {
+  color: whitesmoke !important;
+}
+header .dropdown-item:hover {
+  color: darkblue !important;
 }
 
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: darkblue !important;
+}
+
+.navbar-toggler {
+  color: darkblue !important;
+}
+
+.navbar-toggler {
+  background-color: darkgrey !important;
+}
+
+.dropdown-item:hover {
+  background-color: transparent !important;
+}
+
+/* AL UTILIZAR  @EXTEND NO LO IDENTIFA Y ROMPE EL HTML */
 /* --fin header--*/
 /* inicio img*/
 .photo-grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1 fr;
   grid-template-rows: repeat(3, 300px);
   row-gap: 10px;
-  column-gap: 10px;
+}
+
+.masculinos-catag, .muestra1 {
+  scale: 0.5, 1.4;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+  border-radius: 5px;
+}
+
+.masculinos-catag:hover, .muestra1:hover {
+  transform: scale(0.99);
+  z-index: -3;
 }
 
 .photo-grid2 {
@@ -42,66 +91,38 @@ img {
   height: 100%;
 }
 
-.logo {
+.photo-grid-alianza {
   grid-column: 1/5;
   grid-row: 1/3;
+  object-fit: cover;
+  height: 60vh;
 }
 
+/*main*/
+/* no se aplica la media query !ayuda!*/
 .logo1 {
-  margin: 5px;
+  margin: 10px;
   grid-column: 1/3;
   grid-row: 3/5;
+  object-fit: cover;
 }
 
 .logo2 {
-  margin: 5px;
+  margin: 10px;
+  object-fit: cover;
   grid-column: 3/5;
   grid-row: 3/5;
 }
 
-@media only screen and (max-width: 600px) {
-  section.photo-grid-container {
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
-  }
-  section.photo-grid-container .logo {
-    grid-column: 1/5;
-    grid-row: 1/2;
-  }
-  section.photo-grid-container .logo1 {
-    margin: 8px;
-    justify-content: center;
-    grid-column: 1/5;
-    grid-row: 2/4;
-  }
-  section.photo-grid-container .logo2 {
-    margin: 8px;
-    justify-content: center;
-    grid-column: 1/5;
-    grid-row: 4/5;
-  }
-  .photo-grid {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    border-top: 1px solid black;
-  }
-  .photo-grid2 {
-    justify-content: center;
-    display: flex;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-  .order {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-}
 .muestra1 {
   display: flex;
   flex-wrap: wrap;
   padding: 25px;
+  /* no se aplica extend*/
+}
+.muestra1:hover {
+  transform: scale(0.99);
+  z-index: -3;
 }
 
 .unisex {
@@ -121,12 +142,14 @@ h1 {
   font-style: italic;
   text-shadow: 1px 1px 2px grey;
   text-align: center;
+  font-size: 60px !important;
+  padding-top: 20px;
 }
 
 .descripcion {
   display: flex;
   flex-wrap: wrap;
-  font-size: 30px;
+  font-size: 50px !important;
   text-align: center;
   justify-content: center;
   font-family: "Sedan", serif;
@@ -159,6 +182,58 @@ p {
 .redes {
   font-size: 20px;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .photo-grid-alianza {
+    object-fit: cover;
+    image-rendering: auto;
+  }
+  /*no puedo acomdar el logo principal*/
+  .photo-grid-container {
+    display: grid;
+    grid-template-columns: 1 fr;
+    grid-template-rows: repeat(3, 300px);
+    row-gap: 10px;
+  }
+  .photo-grid-container .logo1 {
+    margin: 10px;
+    grid-column: 1/3;
+    grid-row: 3/5;
+    object-fit: cover;
+  }
+  .photo-grid-container .logo2 {
+    margin: 10px;
+    object-fit: cover;
+    grid-column: 3/5;
+    grid-row: 3/5;
+  }
+}
+@media only screen and (max-width: 400px) {
+  section.photo-grid-container {
+    background-color: blue;
+  }
+  section.photo-grid-container .logo {
+    grid-column: 1/5;
+    grid-row: 1/2;
+  }
+  .photo-grid {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+  }
+  .photo-grid2 {
+    justify-content: center;
+    display: flex;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .order {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */
